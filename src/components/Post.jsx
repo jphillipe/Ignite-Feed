@@ -5,8 +5,17 @@ import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 
 import styles from './Post.module.css'
+import { useState } from 'react';
+
+
 
 export function Post({author, publishedAt, content}){
+    const [comments, setComments] = useState( [
+        'Boa!'
+    ])
+
+    const [newCommentText, setNewCommentText] = useState('')
+
     const publishedDateFormatted = format(publishedAt,"d 'de' LLLL 'às' HH:mm'h'",{
         locale: ptBr,
     })
@@ -16,6 +25,19 @@ export function Post({author, publishedAt, content}){
         addSuffix: true
 
     })
+
+    function handleCreateNewSubmit(e){
+        e.preventDefault();
+        setComments([...comments, newCommentText]);
+        setNewCommentText('');
+
+      
+    }
+
+    function handleNewCommentChange(e) {
+        setNewCommentText(e.target.value );
+        
+    }
 
     
     return(
@@ -44,10 +66,13 @@ export function Post({author, publishedAt, content}){
             })}
         </div>
 
-        <form className={styles.commentForm}>
+        <form onSubmit = {handleCreateNewSubmit} className={styles.commentForm}>
             <strong>Deixe seu feedback</strong>
             <textarea
-                placeholder='Deixe seu comentário'   
+                name='comment'
+                value={newCommentText}
+                placeholder='Deixe seu comentário'  
+                onChange={handleNewCommentChange} 
             />
             <footer>
                 <button type='submit'>Publicar</button>
@@ -55,9 +80,10 @@ export function Post({author, publishedAt, content}){
         </form>
 
         <div className={styles.commentList}>
-            <Comment/>
-            <Comment/>
-            <Comment/>
+           {comments.map((comment)=>{
+                
+               return <Comment content= {comment}/>
+           })}
         </div>
     </article>
     )
