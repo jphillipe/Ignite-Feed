@@ -19,7 +19,7 @@ const posts = [
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
       {type: 'link', content: 'jp.design/doctorcare'},    
     ],
-    publishedAt: new Date('2022-05-24 21:00:00')
+    publishedAt: new Date('2024-01-25 21:00:00')
   },
 
   {
@@ -30,11 +30,12 @@ const posts = [
       role: 'Web Developer'
     },
     content: [
-      {type: 'paragraph', content: 'Fala galeraa 👋'},
-      {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-      {type: 'link', content: 'jp.design/doctorcare'},    
+      {type: 'paragraph', content: 'Eai pessoal!!'},
+      {type: 'paragraph', content: 'Acabei de ser eleito novo diretor de desenvolvimento da TITAN!!!!'},
+      {type: 'paragraph', content: 'Visite nosso site!'},
+      {type: 'link', content: 'titanci.com.br'},    
     ],
-    publishedAt: new Date('2022-05-27 19:00:00')
+    publishedAt: new Date('2024-01-28 19:00:00')
   },
 ];
 
